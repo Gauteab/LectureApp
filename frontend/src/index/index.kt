@@ -1,15 +1,13 @@
 package index
 
 import react.dom.*
-import slider.app
+import slider.student
 import kotlin.browser.*
 
 fun main() {
 
-    val root = document.getElementById("root")
-
-    render(root) {
-        app()
+    render(document.getElementById("root")) {
+        student()
     }
 
 }

@@ -9,7 +9,7 @@ import react.dom.h1
 import react.dom.input
 import react.dom.p
 
-class App : RComponent<RProps, App.State>() {
+class StudentView : RComponent<RProps, StudentView.State>() {
 
     private val ws = WsConnection()
 
@@ -21,7 +21,7 @@ class App : RComponent<RProps, App.State>() {
     }
 
     private fun RBuilder.display() {
-        h1 { +"Slider App" }
+        h1 { +"StudentView" }
         p  { +"Slider Value: ${state.sliderValue}" }
     }
 
@@ -46,4 +46,4 @@ class App : RComponent<RProps, App.State>() {
 
 }
 
-fun RBuilder.app() = child(App::class) {}
+fun RBuilder.student() = child(StudentView::class) {}
