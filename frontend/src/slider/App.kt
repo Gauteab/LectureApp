@@ -38,6 +38,7 @@ class App : RComponent<RProps, App.State>() {
     }
 
     override fun componentDidUpdate(prevProps: RProps, prevState: State, snapshot: Any) {
+        println("Sending: ${state.sliderValue}")
         ws.send(state.sliderValue)
     }
 
@@ -45,4 +46,4 @@ class App : RComponent<RProps, App.State>() {
 
 }
 
-
+fun RBuilder.app() = child(App::class) {}

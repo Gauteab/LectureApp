@@ -1,7 +1,7 @@
 package index
 
 import react.dom.*
-import slider.App
+import slider.app
 import kotlin.browser.*
 
 fun main() {
@@ -9,7 +9,7 @@ fun main() {
     val root = document.getElementById("root")
 
     render(root) {
-        child(App::class) {}
+        app()
     }
 
 }
