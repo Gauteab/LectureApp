@@ -17,15 +17,18 @@ fun Application.module() {
         webSocket("ws") {
             send(Frame.Text("Hi from server"))
             try {
+
                 while (true) {
                     val frame = incoming.receive()
                     require(frame is Frame.Text) { "Non Text Frame Received" }
 
                     println(frame.readText())
-
                 }
+
             } catch (e: ClosedReceiveChannelException) {
                 println("Closed Receive Channel")
+            } catch (e: Throwable) {
+                e.printStackTrace()
             }
         }
     }
